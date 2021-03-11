@@ -83,6 +83,7 @@ function DailyWeather() {
                 dot={false} 
                 dataKey="param" 
                 stroke="red"
+                strokeWidth={3}
             />
             <CartesianGrid stroke="#eeeeee" />
             <XAxis stroke="#eeeeee" height={20} tick={{fontSize: 12, fill: '#eeeeee'}} dataKey="name" />
