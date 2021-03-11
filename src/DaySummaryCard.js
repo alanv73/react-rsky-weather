@@ -17,7 +17,7 @@ const useStyles = makeStyles(() => ({
     },
   },
   card: ({ color }) => ({
-    maxWidth: 256,
+    maxWidth: 300,
     // width: 250,
     borderRadius: 16,
     boxShadow: 'none',
@@ -72,7 +72,7 @@ const useStyles = makeStyles(() => ({
   },
   wind: {
     position: 'absolute',
-    left: '65%',
+    left: '60%',
     top: '35%',
     // border: '2px solid white',
     // borderRadius: 50,
