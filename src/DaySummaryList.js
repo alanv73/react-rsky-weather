@@ -50,7 +50,6 @@ export default function DaySummaryList() {
                     <Grid item key={ds.CREATED}>
                         <DaySummaryCard
                             weather={ds}
-                            // classes={styles}
                             title={'Dota 2'}
                             subtitle={'Be a Legend!'}
                             image={

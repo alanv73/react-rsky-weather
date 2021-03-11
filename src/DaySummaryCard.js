@@ -20,6 +20,7 @@ const useStyles = makeStyles(() => ({
     maxWidth: 300,
     // width: 250,
     borderRadius: 16,
+    background: 'rgba(0,0,0,0.6)',
     boxShadow: 'none',
     '&:hover': {
       boxShadow: `0 6px 12px 0 ${Color(color)
@@ -30,13 +31,13 @@ const useStyles = makeStyles(() => ({
   }),
   topContent: ({ color }) => {
     return {
-      backgroundColor: color,
+      backgroundColor: 'transparent',
       padding: '1rem 1.5rem 0.5rem 1.5rem',
     };
   },
   bottomContent: ({ color }) => {
     return {
-      backgroundColor: color,
+      backgroundColor: 'transparent',
       padding: '0.5rem 1.5rem 1.5rem 1.5rem',
     };
   },
