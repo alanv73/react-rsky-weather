@@ -6,6 +6,7 @@ import DaySummaryList from './DaySummaryList';
 import './App.css';
 
 function App() {
+  document.title = "Raspberry Sky";
   return (
     <div className="App">
       <WeatherProvider>
