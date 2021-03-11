@@ -13,9 +13,13 @@ function App() {
     <div className="App">
       <ThemeProvider theme={theme}>
         <WeatherProvider>
-          <Grid direction="column" >
-            <CurrentWeatherCard />
-            <DailyWeather />
+          <Grid sm={true} className="grid" container direction="column" >
+            <Grid item>
+              <CurrentWeatherCard />
+            </Grid>
+            <Grid item>
+              <DailyWeather />
+            </Grid>
           </Grid>
           <DaySummaryList />
         </WeatherProvider>
