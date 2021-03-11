@@ -4,20 +4,26 @@ import { API_URL } from '../constants';
 
 const useGetWeatherState = (initialVal) => {
     const [state, setState] = useState(initialVal);
+    const [loading, setLoading] = useState(false);
 
 
     const getLatestWeather = async () => {
+        setLoading(true);
         const rskyUrl = `${API_URL}/currently`;
 
         try{
-            const response = await axios.get(rskyUrl);
-            setState(response.data.currently);
+            axios.get(rskyUrl)
+                .then(response => response.data.currently)
+                .then(currently => {
+                    setLoading(false);
+                    setState(currently);
+                });
         } catch(err) {
             console.log(`Error: ${err.message}`);
         }
     }
 
-    return [state, getLatestWeather];
+    return [state, loading, getLatestWeather];
 }
 
 export default useGetWeatherState;

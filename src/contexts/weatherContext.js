@@ -9,7 +9,7 @@ export const DailyContext = createContext();
 export const DailySummaryContext = createContext();
 
 export function WeatherProvider(props) {
-    const [currentWeather, getCurrentWeather] = useGetWeatherState({});
+    const [currentWeather, isLoading,  getCurrentWeather] = useGetWeatherState({});
     const [dailySummary, getDailySummary] = useGetDailySummaryState([]);
     const [currentDate, setCurrentDate] = useState(new Date());
     const [hourlyDate, setHourlyDate] = useState(new Date());
@@ -27,7 +27,8 @@ export function WeatherProvider(props) {
 
     return(
         <WeatherContext.Provider value={{
-            currentWeather, 
+            currentWeather,
+            isLoading, 
             getCurrentWeather
         }} >
             <DailyContext.Provider value={{
