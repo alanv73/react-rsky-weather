@@ -11,7 +11,7 @@ function FieldDropDown({field, onChange, data}) {
                     {data.map(f => (
                         <option key={f} value={f}>
                             {
-                                f.replace('_', ' ')
+                                f.replace(/_/g, ' ')
                                     .split(' ')
                                     .map(w => 
                                         w[0] + w.substr(1).toLowerCase()
