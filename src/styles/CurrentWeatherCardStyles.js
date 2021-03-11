@@ -24,7 +24,8 @@ export default makeStyles(theme => ({
   },
   temp: {
       float: 'left',
-      marginRight: 20,
+      marginLeft: 20,
+      fontWeight: '400',
   },
   list: {
     // background: 'rgba(196,196,196, 0.3)',
