@@ -13,8 +13,8 @@ function App() {
           <CurrentWeatherCard />
           <DailyWeather />
         </Grid>
-          <DaySummaryList />
-        </WeatherProvider>
+        <DaySummaryList />
+      </WeatherProvider>
     </div>
   );
 }
