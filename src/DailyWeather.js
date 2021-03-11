@@ -8,10 +8,16 @@ import { DAILY_FIELDS } from './constants';
 
 const useStyles = makeStyles(theme => ({
     root: {
-        width: 600
+        // width: 600,
+        margin: '30px 30px',
+        
     },
     chart: {
-        margin: '0px 20px',
+        padding: '10px 0px',
+        background: 'rgba(0,0,0,0.6)',
+        borderRadius: 10,
+        width: 525,
+        // margin: '0px 20px',
         "& select": {
             display: 'block',
             margin: '5px auto',
@@ -19,14 +25,24 @@ const useStyles = makeStyles(theme => ({
             fontSize: 18,
             border: 'none',
             borderRadius: 3,
-            background: 'rgba(255,255,255,0.6)',
+            background: 'transparent',//'rgba(255,255,255,0.6)',
+            color: 'white',
             outline: 'none',
         },
+        "& option": {
+            background: 'rgba(0,0,0,0.7)',
+        },
         "& svg": {
-            background: 'rgba(255,255,255,0.6)',
             padding: 10,
-            borderRadius: 10,
         }
+    },
+    tableWrapper: {
+        width: 500,
+        background: 'rgba(0,0,0,0.6)',
+        borderRadius: 10,
+        padding: 12.5,
+        margin: '20px 0px'
+
     },
     table: {
         fontFamily: 'Montserrat',
@@ -34,6 +50,7 @@ const useStyles = makeStyles(theme => ({
         width: '50%',
         overflowY: 'scroll',
         margin: '20px auto',
+        color: 'white',
     },
 }));
 
@@ -67,9 +84,9 @@ function DailyWeather() {
                 dataKey="param" 
                 stroke="red"
             />
-            <CartesianGrid stroke="#666666" />
-            <XAxis height={20} tick={{fontSize: 12}} dataKey="name" />
-            <YAxis width={35} />
+            <CartesianGrid stroke="#eeeeee" />
+            <XAxis stroke="#eeeeee" height={20} tick={{fontSize: 12, fill: '#eeeeee'}} dataKey="name" />
+            <YAxis stroke="#eeeeee" width={35} tick={{fill: '#eeeeee'}} />
         </LineChart>
     );
 
@@ -84,13 +101,15 @@ function DailyWeather() {
                 />
                 {renderLineChart}
             </div>
-            <div className={classes.table} >
-                <TwoColTable 
-                    title={dChartField} 
-                    colHeading1="Time" 
-                    colHeading2="Value"
-                    data={getDayChartData(dChartField)}
-                />
+            <div className={classes.tableWrapper}>
+                <div className={classes.table} >
+                    <TwoColTable 
+                        title={dChartField} 
+                        colHeading1="Time" 
+                        colHeading2="Value"
+                        data={getDayChartData(dChartField)}
+                    />
+                </div>
             </div>
         </div>
     )
