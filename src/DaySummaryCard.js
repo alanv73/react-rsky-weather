@@ -19,7 +19,8 @@ export default function DaySummaryCard({ color, weather }) {
             <Card className={classes.card}>
                 <CardContent className={classes.topContent}>
                     <Typography align="center" className={classes.cardTitle}>
-                        {moment(new Date(weather.CREATED_DATE)).format('dddd, MMM Do YYYY')}
+                        {moment(new Date(weather.CREATED_DATE)).utc().format('dddd, MMM Do')}
+                        {/* {weather.CREATED_DATE} */}
                     </Typography>                        
                 </CardContent>
                 <CardContent className={classes.bottomContent}>
