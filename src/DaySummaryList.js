@@ -1,24 +1,8 @@
 import React, { useContext, useEffect } from 'react';
-import { makeStyles } from '@material-ui/core/styles';
 import Grid from '@material-ui/core/Grid';
 import DaySummaryCard from './DaySummaryCard';
 import { DailySummaryContext } from './contexts/weatherContext';
-
-const useGridStyles = makeStyles(({ breakpoints }) => ({
-    root: {
-        width: 350,
-        // height: 400,
-        overflowY: 'auto',
-        [breakpoints.up('lg')]: {
-            justifyContent: 'center',
-        },
-        marginRight: '50px',
-        margin: '14px 0px',
-        marginBottom: 70
-    },
-}));
-
-
+import useGridStyles from './styles/DaySummaryListStyles';
 
 export default function DaySummaryList() {
     const gridStyles = useGridStyles();
@@ -49,6 +33,7 @@ export default function DaySummaryList() {
                 dailySummary.map(ds => (
                     <Grid item key={ds.CREATED}>
                         <DaySummaryCard
+                            color={'rgba(0,0,0,0.6)'}
                             weather={ds}
                             title={'Dota 2'}
                             subtitle={'Be a Legend!'}
