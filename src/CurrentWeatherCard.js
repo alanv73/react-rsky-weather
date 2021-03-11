@@ -1,4 +1,5 @@
 import React, { useEffect, useContext } from 'react';
+import moment from 'moment';
 import { WeatherContext } from './contexts/weatherContext';
 import Card from '@material-ui/core/Card';
 import CardContent from '@material-ui/core/CardContent';
@@ -80,7 +81,7 @@ function CurrentWeatherCard() {
                     {
                         currentWeather.TOTAL_RAIN > 0 &&
                         <Typography>
-                            {currentWeather.TOTAL_RAIN} in total
+                            {currentWeather.TOTAL_RAIN} in rain
                         </Typography>
                     }
                 </div>
@@ -93,7 +94,7 @@ function CurrentWeatherCard() {
             </CardContent>
             <Divider className={classes.divider} variant="middle" />
             <Typography className={classes.date} align="center">
-                {new Date(currentWeather.CREATED).toLocaleString()}
+                {moment(currentWeather.CREATED).format('h:mm a - dddd, MMM Do YYYY')}
             </Typography>
             <CardActions className={classes.action}>
                 <ColorButton 

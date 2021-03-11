@@ -13,7 +13,9 @@ export default function DaySummaryList() {
 
     useEffect(() => {
         async function getWeatherSummary() {
-            await getDailySummary(new Date(), 5);
+            let d = new Date();
+            d.setDate(d.getDate() - 1);
+            await getDailySummary(d, 5);
         }
         getWeatherSummary();
         // eslint-disable-next-line react-hooks/exhaustive-deps
