@@ -83,16 +83,16 @@ function CurrentWeatherCard() {
                             {currentWeather.TOTAL_RAIN} in total
                         </Typography>
                     }
-                    <div className={classes.wind}>
-                        <img style={{transform: `rotate(${currentWeather.WIND_DIRECTION}deg)`}} className={classes.arrow} src={arrow} alt="arrow"/>
-                        <Typography className={classes.gust} align="left">
-                            {(currentWeather.WIND_GUST_SPEED).toFixed(1)} mph
-                        </Typography>
-                    </div>
+                </div>
+                <div className={classes.wind}>
+                    <img style={{transform: `rotate(${currentWeather.WIND_DIRECTION}deg)`}} className={classes.arrow} src={arrow} alt="arrow"/>
+                    <Typography className={classes.gust} align="left">
+                        {(currentWeather.WIND_GUST_SPEED).toFixed(1)} mph
+                    </Typography>
                 </div>
             </CardContent>
             <Divider className={classes.divider} variant="middle" />
-            <Typography align="center">
+            <Typography className={classes.date} align="center">
                 {new Date(currentWeather.CREATED).toLocaleString()}
             </Typography>
             <CardActions className={classes.action}>

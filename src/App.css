@@ -11,3 +11,7 @@ body {
   /* padding: 50px 50px; */
   /* justify-content: space-between; */
 }
+
+.days {
+  margin: 0 auto;
+}

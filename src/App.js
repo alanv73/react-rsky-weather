@@ -13,15 +13,21 @@ function App() {
     <div className="App">
       <ThemeProvider theme={theme}>
         <WeatherProvider>
-          <Grid sm={true} className="grid" container direction="column" >
-            <Grid item>
-              <CurrentWeatherCard />
+          <Grid className="grid" container direction="row" >
+            <Grid item xs={'auto'}>
+              <Grid className="grid" container direction="column" >
+                <Grid item>
+                  <CurrentWeatherCard />
+                </Grid>
+                <Grid item>
+                  <DailyWeather />
+                </Grid>
+              </Grid>
             </Grid>
-            <Grid item>
-              <DailyWeather />
+            <Grid className="days" item xs={4}>
+              <DaySummaryList />
             </Grid>
           </Grid>
-          <DaySummaryList />
         </WeatherProvider>
       </ThemeProvider>
     </div>

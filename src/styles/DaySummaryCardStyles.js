@@ -3,6 +3,9 @@ import Color from 'color';
 
 export default makeStyles(() => ({
   actionArea: {
+    // maxWidth: 280,
+    // width: 250,
+    // minWidth: 215,
     borderRadius: 16,
     transition: '0.2s',
     '&:hover': {
@@ -10,7 +13,9 @@ export default makeStyles(() => ({
     },
   },
   card: ({ color }) => ({
-    maxWidth: 300,
+    maxWidth: 280,
+    width: 260,
+    minWidth: 215,
     // width: 250,
     borderRadius: 16,
     background: color,
@@ -32,6 +37,9 @@ export default makeStyles(() => ({
     return {
       backgroundColor: 'transparent',
       padding: '0.5rem 1.5rem 1.5rem 1.5rem',
+      display: 'flex',
+      flexDirection: 'row',
+      justifyContent: 'space-around',
     };
   },
   maxTemp: {
@@ -64,14 +72,11 @@ export default makeStyles(() => ({
     fontWeight: 500,
     fontSize: 14,
   },
+  cardData: {
+    // float: 'left',
+  },
   wind: {
-    position: 'absolute',
-    left: '60%',
-    top: '35%',
-    // border: '2px solid white',
-    // borderRadius: 50,
-    width: 70,
-    height: 70,
+    alignSelf: 'center',
   },
   gust: {
     fontFamily: 'Montserrat',
@@ -79,15 +84,11 @@ export default makeStyles(() => ({
     opacity: 0.87,
     fontWeight: 500,
     fontSize: 9,
-    position: 'absolute',
-    bottom: -10,
-    left: '25%',
+    textAlign: 'center',
   },
   arrow: {
     width: 35,
     height: 50,
-    position: 'absolute',
-    left: 'calc(50% - 17px)',
-    top: 'calc(50% - 22px)',
+    margin: '0 auto',
   },
 }));

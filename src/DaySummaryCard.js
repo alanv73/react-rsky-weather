@@ -23,24 +23,26 @@ export default function DaySummaryCard({ color, weather }) {
                     </Typography>                        
                 </CardContent>
                 <CardContent className={classes.bottomContent}>
-                    <Typography className={classes.maxTemp} variant={'h2'}>
-                        {(weather.MAX_AMBIENT_TEMPERATURE).toFixed(0)}&deg;
-                        <Typography className={classes.minTemp} variant={'caption'}>
-                            {(weather.MIN_AMBIENT_TEMPERATURE).toFixed(0)}&deg;
+                    <div className={classes.cardData}>
+                        <Typography className={classes.maxTemp} variant={'h2'}>
+                            {(weather.MAX_AMBIENT_TEMPERATURE).toFixed(0)}&deg;
+                            <Typography className={classes.minTemp} variant={'caption'}>
+                                {(weather.MIN_AMBIENT_TEMPERATURE).toFixed(0)}&deg;
+                            </Typography>
                         </Typography>
-                    </Typography>
-                    <Typography className={classes.subtitle}>
-                        humidity {(weather.AVG_HUMIDITY).toFixed(0)}%
-                    </Typography>
-                    <Typography className={classes.subtitle}>
-                        {(weather.AVG_AIR_PRESSURE/33.864).toFixed(2)} inHg
-                    </Typography>
-                    {
-                        weather.TOTAL_RAINFALL > 0 &&
                         <Typography className={classes.subtitle}>
-                            rain {weather.TOTAL_RAINFALL} in
+                            humidity {(weather.AVG_HUMIDITY).toFixed(0)}%
                         </Typography>
-                    }
+                        <Typography className={classes.subtitle}>
+                            {(weather.AVG_AIR_PRESSURE/33.864).toFixed(2)} inHg
+                        </Typography>
+                        {
+                            weather.TOTAL_RAINFALL > 0 &&
+                            <Typography className={classes.subtitle}>
+                                rain {weather.TOTAL_RAINFALL} in
+                            </Typography>
+                        }
+                    </div>
                     <div className={classes.wind}>
                         <img style={{transform: `rotate(${weather.AVG_WIND_DIRECTION}deg)`}} className={classes.arrow} src={arrow} alt="arrow"/>
                         <Typography className={classes.gust}>
