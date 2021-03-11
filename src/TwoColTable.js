@@ -16,6 +16,7 @@ const useStyles = makeStyles(theme => ({
         position: 'sticky',
         top: 0,
         background: '#DDD',
+        color: 'black',
     },
     content: {
         padding: '5px 10px',
