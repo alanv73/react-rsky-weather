@@ -28,7 +28,7 @@ const useGetDailySummaryState = (defaultVal) => {
         return state.map(p => p[param]);
     }
 
-    return [state, getDailySummary];
+    return [state, getDailySummary, getParamArray];
 }
 
 export default useGetDailySummaryState;

@@ -10,10 +10,8 @@ export const DailySummaryContext = createContext();
 
 export function WeatherProvider(props) {
     const [currentWeather, isLoading,  getCurrentWeather] = useGetWeatherState({});
-    const [dailySummary, getDailySummary] = useGetDailySummaryState([]);
+    const [dailySummary, getDailySummary, getSummaryParamArray] = useGetDailySummaryState([]);
     const [currentDate, setCurrentDate] = useState(new Date());
-    const [hourlyDate, setHourlyDate] = useState(new Date());
-    const [hChartField, handleHrChartChange] = useSelectState('AVG_AMBIENT_TEMPERATURE');
     const [dChartField, handleDayChartChange] = useSelectState('AMBIENT_TEMPERATURE');
 
     const [
@@ -45,7 +43,8 @@ export function WeatherProvider(props) {
             }} >
                 <DailySummaryContext.Provider value={{
                     dailySummary, 
-                    getDailySummary, 
+                    getDailySummary,
+                    getSummaryParamArray
                 }} >
                     {props.children}
                 </DailySummaryContext.Provider>

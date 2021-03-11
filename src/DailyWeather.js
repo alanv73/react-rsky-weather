@@ -21,6 +21,7 @@ function DailyWeather() {
             await getDailyDataState(currentDate);
         }
         getSummary();
+        // eslint-disable-next-line react-hooks/exhaustive-deps
     }, [currentDate]);
 
     const renderLineChart = (
