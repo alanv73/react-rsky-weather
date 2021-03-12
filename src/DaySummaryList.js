@@ -14,7 +14,7 @@ export default function DaySummaryList() {
     useEffect(() => {
         async function getWeatherSummary() {
             let d = new Date();
-            d.setDate(d.getDate() - 1);
+            // d.setDate(d.getDate() - 1);
             await getDailySummary(d, 5);
         }
         getWeatherSummary();
