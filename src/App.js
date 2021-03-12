@@ -2,7 +2,7 @@ import { WeatherProvider } from './contexts/weatherContext';
 import { ThemeProvider } from '@material-ui/core/styles';
 import Grid from '@material-ui/core/Grid';
 import CurrentWeatherCard from './CurrentWeatherCard';
-import DailyWeather from './DailyWeather';
+import DailyWeatherTabs from './DailyWeatherTabs';
 import DaySummaryList from './DaySummaryList';
 import theme from './styles/theme';
 import './App.css';
@@ -20,7 +20,7 @@ function App() {
                   <CurrentWeatherCard />
                 </Grid>
                 <Grid item>
-                  <DailyWeather />
+                  <DailyWeatherTabs />
                 </Grid>
               </Grid>
             </Grid>
