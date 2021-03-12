@@ -22,7 +22,4 @@ export default makeStyles((theme) => ({
     "& option": {
         background: 'rgba(0,0,0,0.7)',
     },
-    tabs: {
-        textTransform: 'none',
-    }
 }));

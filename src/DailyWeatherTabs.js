@@ -3,8 +3,7 @@ import SwipeableViews from 'react-swipeable-views';
 import { useTheme, createMuiTheme, MuiThemeProvider } from '@material-ui/core/styles';
 import createPalette from '@material-ui/core/styles/createPalette';
 import AppBar from '@material-ui/core/AppBar';
-import StyledTabs from './StyledTabs';
-import StyledTab from './StyledTab';
+import { StyledTabs, StyledTab } from './StyledTabs';
 import {grey, amber, yellow} from '@material-ui/core/colors';
 import TabPanel from './TabPanel';
 import FieldDropDown from './FieldDropDown';
@@ -71,7 +70,6 @@ const DailyWeatherTabs = () => {
                 />
                 <AppBar position="static" color="transparent">
                     <StyledTabs
-                        classes={{ tabs: classes.tabs }}
                         value={value}
                         onChange={handleChange}
                         indicatorColor="primary"

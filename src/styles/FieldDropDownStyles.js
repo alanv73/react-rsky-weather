@@ -4,7 +4,7 @@ export default makeStyles((theme) => ({
     select: {
         display: 'block',
         margin: '5px auto',
-        padding: '10px 0px',
+        padding: '10px 0px 0px',
         fontFamily: 'Montserrat',
         fontSize: 18,
         border: 'none',
