@@ -13,6 +13,7 @@ import { blue } from '@material-ui/core/colors';
 import Spinner from './assets/spinner.gif';
 import arrow from './assets/arrow_wht.png';
 import useStyles from './styles/CurrentWeatherCardStyles';
+import icon from './assets/rsky.png';
 
 function CurrentWeatherCard() {
     const classes = useStyles();
@@ -62,7 +63,14 @@ function CurrentWeatherCard() {
     }
     return (
         <Card className={classes.root}>
-            <CardHeader title="Raspberry Sky" className={classes.header} />
+            <div className={classes.title} >
+                <img className={classes.icon} src={icon} alt="logo"/>
+                <CardHeader 
+                    titleTypographyProps={{variant: "h4"}}
+                    title="Raspberry Sky" 
+                    className={classes.header}
+                />
+            </div>
             <Divider className={classes.divider} variant="middle" />
             <CardContent className={classes.content}>
                 <Typography className={classes.temp} variant="h2" align="left">
