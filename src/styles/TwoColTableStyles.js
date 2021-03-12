@@ -14,7 +14,7 @@ export default makeStyles(theme => ({
     headings: {
         position: 'sticky',
         top: 0,
-        background: '#DDD',
+        background: '#5e5e5e',
         color: 'black',
     },
     content: {

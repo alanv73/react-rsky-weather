@@ -1,34 +1,19 @@
-import React, { useEffect, useContext } from 'react';
-import { DailyContext } from './contexts/weatherContext';
+import React from 'react';
 import TwoColTable from './TwoColTable';
 import useStyles from './styles/DailyWeatherTableStyles';
 
-function DailyWeatherTable() {
+function DailyWeatherTable({title, headings, tableData}) {
     const classes = useStyles();
-    const {
-        currentDate, 
-        getDailyDataState, 
-        getDayChartData,
-        dChartField,
-    } = useContext(DailyContext);
-
-    useEffect(() => {
-        async function getSummary() {
-            await getDailyDataState(currentDate);
-        }
-        getSummary();
-        // eslint-disable-next-line react-hooks/exhaustive-deps
-    }, [currentDate]);
 
     return (
         <div className={classes.root}>
             <div className={classes.tableWrapper}>
                 <div className={classes.table} >
                     <TwoColTable 
-                        title={dChartField} 
-                        colHeading1="Time" 
-                        colHeading2="Value"
-                        data={getDayChartData(dChartField)}
+                        title={title} 
+                        colHeading1={headings[0]} 
+                        colHeading2={headings[1]}
+                        data={tableData}
                     />
                 </div>
             </div>

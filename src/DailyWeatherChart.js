@@ -1,27 +1,12 @@
-import React, { useEffect, useContext } from 'react';
-import { DailyContext } from './contexts/weatherContext';
+import React from 'react';
 import { LineChart, Line, CartesianGrid, XAxis, YAxis } from 'recharts';
 import useStyles from './styles/DailyWeatherChartStyles';
 
-function DailyWeatherChart() {
+function DailyWeatherChart({chartData}) {
     const classes = useStyles();
-    const {
-        currentDate, 
-        getDailyDataState, 
-        getDayChartData,
-        dChartField,
-    } = useContext(DailyContext);
-
-    useEffect(() => {
-        async function getSummary() {
-            await getDailyDataState(currentDate);
-        }
-        getSummary();
-        // eslint-disable-next-line react-hooks/exhaustive-deps
-    }, [currentDate]);
 
     const renderLineChart = (
-        <LineChart width={450} height={280} data={getDayChartData(dChartField)}>
+        <LineChart width={450} height={280} data={chartData}>
             <Line 
                 type="monotone" 
                 dot={false} 
