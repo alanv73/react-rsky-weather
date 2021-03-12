@@ -26,7 +26,6 @@ export const HOURLY_FIELDS = [
 export const DAILY_FIELDS = [
     "AMBIENT_TEMPERATURE",
     "GROUND_TEMPERATURE",
-    "AIR_QUALITY",
     "AIR_PRESSURE",
     "HUMIDITY",
     "WIND_DIRECTION",
@@ -36,5 +35,5 @@ export const DAILY_FIELDS = [
     "HEAT_IDX",
     "DEW_PT",
     "CPU_TEMP",
-    "TOTAL_RAIN"
+    "RAINFALL"
 ];
