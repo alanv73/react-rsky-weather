@@ -11,6 +11,15 @@ export default makeStyles(theme => ({
     background: 'rgba(0,0,0, 0.6)',
     color: 'white',
   },
+  title: {
+    display: 'flex',
+    flexDirection: 'row',
+    justifyContent: 'center'
+  },
+  icon: {
+    height: '40px',
+    alignSelf: 'center',
+  },
   divider: {
     background: 'white',
   },
