@@ -11,3 +11,7 @@ body {
 .days {
   min-width: 260px;
 }
+
+.grid {
+  min-width: 500px;
+}

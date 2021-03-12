@@ -3,10 +3,13 @@ import { makeStyles } from '@material-ui/core';
 export default makeStyles(theme => ({
   root: {
     borderRadius: 12,
-    width: 525,
+    width: '95%',//525,
+    maxWidth: 525,
+    minWidth: 490,
     // height: 300,
     textAlign: 'center',
-    margin: '30px 30px 15px',
+    margin: '30px auto 15px',
+    // margin: '30px 00px 15px',//'30px 30px 15px',
     overflow: 'auto',
     background: 'rgba(0,0,0, 0.6)',
     color: 'white',

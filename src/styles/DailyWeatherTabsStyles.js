@@ -2,11 +2,14 @@ import { makeStyles } from '@material-ui/core/styles';
 
 export default makeStyles((theme) => ({
     root: {
-        marginLeft: 30,
+        // marginLeft: 30,
+        margin: '0px auto',
         borderRadius: 10,
         backgroundColor: 'rgba(0,0,0, 0.6)',
         color: 'white',
-        width: 525,
+        width: '95%',//525,
+        maxWidth: 525,
+        minWidth: 490,
     },
     select: {
         display: 'block',

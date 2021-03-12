@@ -6,7 +6,7 @@ function DailyWeatherChart({chartData}) {
     const classes = useStyles();
 
     const renderLineChart = (
-        <LineChart width={450} height={280} data={chartData}>
+        <LineChart width={425} height={280} data={chartData}>
             <Line 
                 type="monotone" 
                 dot={false} 
