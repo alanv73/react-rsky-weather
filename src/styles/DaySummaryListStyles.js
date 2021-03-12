@@ -9,7 +9,7 @@ export default makeStyles(({ breakpoints }) => ({
             justifyContent: 'center',
         },
         marginRight: '50px',
-        marginLeft: '30px',
+        // marginLeft: '30px',
         margin: '14px auto',
         marginBottom: 70,
     },
