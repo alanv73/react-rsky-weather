@@ -87,8 +87,8 @@ const DailyWeatherTabs = () => {
                     variant="fullWidth"
                     aria-label="full width tabs example"
                     >
-                        <Tab className={classes.tab} label="Chart"  />
-                        <Tab className={classes.tab} label="Table"  />
+                        <Tab className={classes.tab} label="Chart" {...a11yProps(0)} />
+                        <Tab className={classes.tab} label="Table" {...a11yProps(1)} />
                     </Tabs>
                 </AppBar>
                 <SwipeableViews

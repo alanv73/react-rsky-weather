@@ -3,14 +3,13 @@ import { DailyContext } from './contexts/weatherContext';
 import { LineChart, Line, CartesianGrid, XAxis, YAxis } from 'recharts';
 import useStyles from './styles/DailyWeatherChartStyles';
 
-function DailyWeather() {
+function DailyWeatherChart() {
     const classes = useStyles();
     const {
         currentDate, 
         getDailyDataState, 
         getDayChartData,
         dChartField,
-        handleDayChartChange
     } = useContext(DailyContext);
 
     useEffect(() => {
@@ -46,4 +45,4 @@ function DailyWeather() {
     )
 }
 
-export default DailyWeather;
+export default DailyWeatherChart;

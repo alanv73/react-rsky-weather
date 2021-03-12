@@ -3,14 +3,13 @@ import { DailyContext } from './contexts/weatherContext';
 import TwoColTable from './TwoColTable';
 import useStyles from './styles/DailyWeatherTableStyles';
 
-function DailyWeather() {
+function DailyWeatherTable() {
     const classes = useStyles();
     const {
         currentDate, 
         getDailyDataState, 
         getDayChartData,
         dChartField,
-        handleDayChartChange
     } = useContext(DailyContext);
 
     useEffect(() => {
@@ -37,4 +36,4 @@ function DailyWeather() {
     )
 }
 
-export default DailyWeather;
+export default DailyWeatherTable;
