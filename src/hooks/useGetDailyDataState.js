@@ -4,8 +4,10 @@ import { API_URL, DAILY_FIELDS } from '../constants';
 
 const useGetDailyDataState = (defaultVal) => {
     const [state, setState] = useState(defaultVal);
+    const [loading, setLoading] = useState(false);
 
     const getDailyData = async (targetDate) => {
+        setLoading(true);
         const headers = {
             headers: {
                 reqdate: targetDate.toLocaleDateString(),
@@ -13,8 +15,15 @@ const useGetDailyDataState = (defaultVal) => {
         }
         const rskyUrl = `${API_URL}/daily`;
         try {
-            const response = await axios.get(rskyUrl, headers);
-            setState(response.data.daily);
+            axios.get(rskyUrl, headers)
+                .then(response => response.data.daily)
+                .then(daily => {
+                    setLoading(false);
+                    setState(daily);
+                }).catch(err => {
+                    setLoading(false);
+                    console.log(`Error: ${err.message}`);
+                });
         } catch(err) {
             console.log(`Error: ${err.message}`);
         }
@@ -65,7 +74,7 @@ const useGetDailyDataState = (defaultVal) => {
         return [];
     }
 
-    return [state, getDailyData, getParamArray, getMinParam, getMaxParam, getDayChartData];
+    return [state, loading, getDailyData, getParamArray, getMinParam, getMaxParam, getDayChartData];
 }
 
 export default useGetDailyDataState;

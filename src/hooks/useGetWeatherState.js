@@ -17,6 +17,9 @@ const useGetWeatherState = (initialVal) => {
                 .then(currently => {
                     setLoading(false);
                     setState(currently);
+                }).catch(err => {
+                    setLoading(false);
+                    console.log(`Error: ${err.message}`);
                 });
         } catch(err) {
             console.log(`Error: ${err.message}`);

@@ -1,6 +1,6 @@
 import React, { useEffect, useContext } from 'react';
 import moment from 'moment';
-import { WeatherContext } from './contexts/weatherContext';
+import { WeatherContext, DailyContext, DailySummaryContext } from './contexts/weatherContext';
 import Card from '@material-ui/core/Card';
 import CardContent from '@material-ui/core/CardContent';
 import Typography from '@material-ui/core/Typography';
@@ -16,9 +16,15 @@ import useStyles from './styles/CurrentWeatherCardStyles';
 
 function CurrentWeatherCard() {
     const classes = useStyles();
+    const {isDailySummaryLoading, getDailySummary} = useContext(DailySummaryContext);
+    const {
+        currentDate, 
+        isDailyDataLoading, 
+        getDailyDataState
+    } = useContext(DailyContext);
     const {
         currentWeather,
-        isLoading, 
+        isCurrentWeatherLoading, 
         getCurrentWeather
     } = useContext(WeatherContext);
 
@@ -29,6 +35,12 @@ function CurrentWeatherCard() {
         getWeather();
         // eslint-disable-next-line react-hooks/exhaustive-deps
     }, []);
+
+    const refreshWeatherData = async () => {
+        await getCurrentWeather();
+        await getDailyDataState(currentDate);
+        await getDailySummary(currentDate, 5);
+    }
 
     const ColorButton = withStyles((theme) => ({
         root: {
@@ -42,6 +54,7 @@ function CurrentWeatherCard() {
     }))(Button);
 
     const loadingSpinner = <img style={{width: 20}} src={Spinner} alt="Loading..."/>
+    const isLoading = isCurrentWeatherLoading || isDailyDataLoading || isDailySummaryLoading;
 
     // if currentWeather is an empty object return null
     if(JSON.stringify(currentWeather) === JSON.stringify({})){
@@ -101,7 +114,7 @@ function CurrentWeatherCard() {
                     color="primary"
                     size="small" 
                     className={classes.button}
-                    onClick={isLoading ? null : async () => getCurrentWeather()}
+                    onClick={isLoading ? null : refreshWeatherData}
                     startIcon={isLoading && loadingSpinner}
                 >
                     {isLoading ? 'Loading...' : 'Refresh'}

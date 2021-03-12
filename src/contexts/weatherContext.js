@@ -9,13 +9,14 @@ export const DailyContext = createContext();
 export const DailySummaryContext = createContext();
 
 export function WeatherProvider(props) {
-    const [currentWeather, isLoading,  getCurrentWeather] = useGetWeatherState({});
-    const [dailySummary, getDailySummary, getSummaryParamArray] = useGetDailySummaryState([]);
+    const [currentWeather, isCurrentWeatherLoading,  getCurrentWeather] = useGetWeatherState({});
+    const [dailySummary, isDailySummaryLoading, getDailySummary, getSummaryParamArray] = useGetDailySummaryState([]);
     const [currentDate, setCurrentDate] = useState(new Date());
     const [dChartField, handleDayChartChange] = useSelectState('AMBIENT_TEMPERATURE');
 
     const [
         dailyData, 
+        isDailyDataLoading,
         getDailyDataState, 
         getDailyParamArray,
         getMinParam,
@@ -26,11 +27,12 @@ export function WeatherProvider(props) {
     return(
         <WeatherContext.Provider value={{
             currentWeather,
-            isLoading, 
+            isCurrentWeatherLoading, 
             getCurrentWeather
         }} >
             <DailyContext.Provider value={{
-                dailyData, 
+                dailyData,
+                isDailyDataLoading, 
                 currentDate, 
                 setCurrentDate, 
                 getDailyDataState, 
@@ -43,6 +45,7 @@ export function WeatherProvider(props) {
             }} >
                 <DailySummaryContext.Provider value={{
                     dailySummary, 
+                    isDailySummaryLoading,
                     getDailySummary,
                     getSummaryParamArray
                 }} >
