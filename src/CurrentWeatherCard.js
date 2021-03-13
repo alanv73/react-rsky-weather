@@ -80,12 +80,6 @@ function CurrentWeatherCard() {
                     <Typography>
                         humidity {(currentWeather.HUMIDITY).toFixed(0)}%
                     </Typography>
-                    <Typography>
-                        {(currentWeather.AIR_PRESSURE/33.864).toFixed(2)} inHg
-                    </Typography>
-                    <Typography>
-                        ground temp {(currentWeather.GROUND_TEMPERATURE).toFixed(0)}&deg;
-                    </Typography>
                     {
                         currentWeather.AMBIENT_TEMPERATURE < 50 && 
                         currentWeather.WIND_GUST_SPEED >= 3 &&
@@ -105,6 +99,12 @@ function CurrentWeatherCard() {
                             {currentWeather.TOTAL_RAIN} in rain
                         </Typography>
                     }
+                    <Typography>
+                        soil temp {(currentWeather.GROUND_TEMPERATURE).toFixed(0)}&deg;
+                    </Typography>
+                    <Typography>
+                        {(currentWeather.AIR_PRESSURE/33.864).toFixed(2)} inHg
+                    </Typography>
                 </div>
                 <div className={classes.wind}>
                     <img style={{transform: `rotate(${currentWeather.WIND_DIRECTION}deg)`}} className={classes.arrow} src={arrow} alt="arrow"/>

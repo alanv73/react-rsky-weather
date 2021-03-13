@@ -7,9 +7,9 @@ export default makeStyles((theme) => ({
         borderRadius: 10,
         backgroundColor: 'rgba(0,0,0, 0.6)',
         color: 'white',
-        width: '95%',//525,
-        maxWidth: 525,
-        minWidth: 490,
+        width: '90%',//525,
+        // maxWidth: 525,
+        minWidth: 350,
     },
     select: {
         display: 'block',

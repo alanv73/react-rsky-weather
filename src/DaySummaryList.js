@@ -25,23 +25,20 @@ export default function DaySummaryList() {
         <>
             <Grid 
                 direction="column-reverse"
+                className="list"
+                justify="center"
                 classes={gridStyles} 
                 container 
-                spacing={4} 
+                spacing={4}
                 wrap={'nowrap'}
             >
             {
                 dailySummary.length > 0 &&
                 dailySummary.map(ds => (
-                    <Grid item key={ds.CREATED}>
+                    <Grid item key={ds.CREATED} >
                         <DaySummaryCard
                             color={'rgba(0,0,0,0.6)'}
                             weather={ds}
-                            title={'Dota 2'}
-                            subtitle={'Be a Legend!'}
-                            image={
-                            'https://steamcdn-a.akamaihd.net/apps/dota2/images/blog/play/dota_heroes.png'
-                            }
                         />
                     </Grid>
                 ))

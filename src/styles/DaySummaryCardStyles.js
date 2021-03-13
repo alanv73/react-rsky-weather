@@ -3,9 +3,6 @@ import Color from 'color';
 
 export default makeStyles(() => ({
   actionArea: {
-    // maxWidth: 280,
-    // width: 250,
-    // minWidth: 215,
     borderRadius: 16,
     transition: '0.2s',
     '&:hover': {
@@ -13,10 +10,8 @@ export default makeStyles(() => ({
     },
   },
   card: ({ color }) => ({
-    maxWidth: 280,
-    width: 260,
     minWidth: 215,
-    // width: 250,
+    margin: '0px auto',
     borderRadius: 16,
     background: color,
     boxShadow: 'none',

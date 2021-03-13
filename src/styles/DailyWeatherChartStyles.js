@@ -11,7 +11,7 @@ export default makeStyles(theme => ({
         margin: '15px auto',
         background: 'rgba(0,0,0,0.6)',
         borderRadius: 10,
-        width: 450,
+        minWidth: 325,
         "& svg": {
             padding: 10,
         }
