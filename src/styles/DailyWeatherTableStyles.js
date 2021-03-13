@@ -7,7 +7,7 @@ export default makeStyles(theme => ({
         
     },
     tableWrapper: {
-        width: 450,
+        minWidth: 300,
         background: 'rgba(0,0,0,0.6)',
         borderRadius: 10,
         padding: 12.5,
@@ -17,7 +17,7 @@ export default makeStyles(theme => ({
     table: {
         fontFamily: 'Montserrat',
         height: '250px',
-        width: '50%',
+        width: '70%',
         overflowY: 'scroll',
         margin: '10px auto 10px',
         color: 'white',
