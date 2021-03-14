@@ -5,7 +5,7 @@ export default makeStyles(theme => ({
     borderRadius: 12,
     width: '90%',
     // maxWidth: 525,
-    minWidth: 360,
+    minWidth: 350,
     textAlign: 'center',
     margin: '30px auto 15px',
     // overflow: 'auto',
@@ -36,8 +36,8 @@ export default makeStyles(theme => ({
     flexWrap: 'wrap',
   },
   temp: {
-      fontWeight: '400',
-      alignSelf: 'center',
+    fontWeight: '400',
+    alignSelf: 'center',
   },
   list: {
     padding: '0px 0px',
@@ -48,9 +48,10 @@ export default makeStyles(theme => ({
     justifyContent: 'flex-start',
     flexBasis: '110px',
     "& p": {
-        padding: '0px 10px',
-        textAlign: 'center',
-        minWidth: '110px',
+      fontSize: 15,
+      padding: '0px 10px',
+      textAlign: 'center',
+      minWidth: '110px',
     }
   },
   wind: {

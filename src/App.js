@@ -13,7 +13,7 @@ function App() {
     <div className="App">
       <ThemeProvider theme={theme}>
         <WeatherProvider>
-          <Grid justify="center" container direction="row" spacing={4} >
+          <Grid className="main" justify="center" container direction="row" spacing={0} >
             <Grid className="grid" item xs={6}>
               <Grid justify="flex-start" container spacing={1} direction="column" >
                 <Grid item xs={12}>
