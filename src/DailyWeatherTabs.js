@@ -60,6 +60,9 @@ const DailyWeatherTabs = () => {
 
     const domainData = getDayChartData(dChartField);
 
+    if(JSON.stringify(domainData) === JSON.stringify([])) {
+        return null;
+    }
     return (
         <MuiThemeProvider theme={muiTheme}>
             <div className={classes.root}>
