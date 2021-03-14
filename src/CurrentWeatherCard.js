@@ -90,7 +90,7 @@ function CurrentWeatherCard() {
                     {
                         currentWeather.AMBIENT_TEMPERATURE >= 50 && 
                         <Typography>
-                            heat index {(currentWeather.HEAT_IDX).toFixed(0)}&deg;
+                            heat idx {(currentWeather.HEAT_IDX).toFixed(0)}&deg;
                         </Typography>
                     }
                     {

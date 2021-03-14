@@ -46,11 +46,11 @@ export default makeStyles(theme => ({
     display: 'flex',
     flexDirection: 'column',
     justifyContent: 'flex-start',
-    flexBasis: '115px',
+    flexBasis: '110px',
     "& p": {
         padding: '0px 10px',
         textAlign: 'center',
-        minWidth: '115px',
+        minWidth: '110px',
     }
   },
   wind: {
