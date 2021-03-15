@@ -21,3 +21,5 @@
 npm-debug.log*
 yarn-debug.log*
 yarn-error.log*
+*.log
+report.20210314.185303.32446.0.001.json
