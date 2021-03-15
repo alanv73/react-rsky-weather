@@ -31,9 +31,9 @@ export default makeStyles(theme => ({
   content: {
     padding: '12px 24px',
     display: 'flex',
+    flexWrap: 'nowrap',
     flexDirection: 'row',
     justifyContent: 'space-around',
-    flexWrap: 'wrap',
   },
   temp: {
     fontWeight: '400',

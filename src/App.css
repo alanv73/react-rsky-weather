@@ -1,6 +1,6 @@
 body {
   /* Photo by NOAA on Unsplash */
-  background: url('./assets/noaa.jpg') no-repeat center center fixed;
+  background: url('./assets/noaa.jpg') no-repeat center center fixed #d4864c;
   background-size: cover;
 }
 

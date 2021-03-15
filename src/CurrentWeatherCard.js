@@ -54,7 +54,7 @@ function CurrentWeatherCard() {
         },
     }))(Button);
 
-    const loadingSpinner = <img style={{width: 20}} src={Spinner} alt="Loading..."/>
+    const loadingSpinner = <img style={{width: 20, height: 20}} src={Spinner} alt="Loading..."/>
     const isLoading = isCurrentWeatherLoading || isDailyDataLoading || isDailySummaryLoading;
 
     // if currentWeather is an empty object return null
