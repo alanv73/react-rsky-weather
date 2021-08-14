@@ -1,4 +1,4 @@
-export const API_URL = 'http://192.168.1.103:4000';
+export const API_URL = 'http://raspberrysky.hopto.org:4000';
 
 export const HOURLY_FIELDS = [
     'AVG_AMBIENT_TEMPERATURE',
