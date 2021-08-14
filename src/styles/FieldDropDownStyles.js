@@ -12,6 +12,7 @@ export default makeStyles((theme) => ({
         background: 'transparent',//'rgba(255,255,255,0.6)',
         color: 'white',
         outline: 'none',
+        textAlignLast: 'center',
     },
     option: {
         background: 'rgba(0,0,0,0.7)',
